@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Astral</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    
+    <header class="header" id="inicio">
+        <img class="hamburguer" src="img/hamburguesa.svg" alt="">
+        <nav class="menu-navegacion">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicio">Calculadora Numero</a>
+                <a href="#galeria">Numero</a>
+                <a href="#expertos">Contacto</a>
+                <a href="#footer">Redes</a>
+        </nav>
+        <div class="contenedor head">
+            <h1 class="titulo">Es nuestro inconsciente biológico el que se pone en marcha para garantizar, con un esfuerzo extra, nuestra supervivencia</h1>
+            <p class="copy">"Lo que no sale de tus labios, grita desde el fondo del alma y se convierte en sintoma" Dr. Salomon Sellam</p>
+        </div>
+        
+    </header>
+    <main>
+        <section class="services contenedor" id="servicio">
+            <h2 class="subtitulo">CALCULADORA DE NUMERO ASTRAL</h2>
+
+            <p>
+            <div class="contenedor-servicio">
+                <img src="img/checklist.svg" alt="">
+                <div class="checklist-servicio">
+            <div class="service">
+                       
+            </p>
+
+            <h4 class="subtitulo">Ingresa tu fecha de nacimiento</h4>
+                    
+                    <input class="input" type="number" Placeholder=" Dia "  id="dia" name="dia" min="1" max="31">
+                    
+                    <input class="input" type="number" Placeholder=" Mes" id="mes" name="mes" min="1" max="12">
+                    
+                    <input class="input" type="number" Placeholder=" Año" id="año" name="año" min="1900" max="2099">
+                    
+                    <div class="service">
+                        <button class="button" onclick="calcularNumeroAstral()">Calcular</button>
+                        <p  id="resultado" class="subtitulo"></p>
+                    </div>
+                    <script>
+                        function calcularNumeroAstral() {
+                            var dia = document.getElementById("dia").value;
+                            var mes = document.getElementById("mes").value;
+                            var año = document.getElementById("año").value;
+                            var fecha = dia + mes + año;
+                            var numeroAstral = 0;
+                            for (var i = 0; i < fecha.length; i++) {
+                                if (!isNaN(fecha[i])) { // si es un número
+                                    numeroAstral += parseInt(fecha[i]);
+                                }
+                            }
+                            // reducir a un solo dígito
+                            while (numeroAstral > 9) {
+                                var temp = numeroAstral;
+                                numeroAstral = 0;
+                                while (temp != 0) {
+                                    numeroAstral += temp % 10;
+                                    temp = Math.floor(temp / 10);
+                                }
+                            }
+                            document.getElementById("resultado").innerHTML = "TU NUMERO ASTRAL ES " + numeroAstral;
+                        }
+                    </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery" id="galeria">
+            <div class="contenedor">
+                <h2 class="subtitulo">Busca tu Numero</h2>
+                <div class="contenedor-galeria">
+                    <img src="img/uno.jpg" class="img-galeria" alt="">
+                    <img src="img/dos.jpg" class="img-galeria" alt="">
+                    <img src="img/tres.jpg" class="img-galeria" alt="">
+                    <img src="img/cuatro.jpg" class="img-galeria" alt="">
+                    <img src="img/cinco.jpg" class="img-galeria" alt="">
+                    <img src="img/seis.jpg" class="img-galeria" alt="">
+                    <img src="img/siete.jpg" class="img-galeria" alt="">
+                    <img src="img/ocho.jpg" class="img-galeria" alt="">
+                    <img src="img/nueve.jpg" class="img-galeria" alt="">
+                    <img src="img/once.jpg" class="img-galeria" alt="">
+                    <img src="img/ventidos.jpg" class="img-galeria" alt="">
+                </div>
+            </div>
+        </section>
+        <div class="imagen-light">
+            <img src="img/close.svg" alt="" class="close">
+            <img src="" alt="" class="agregar-imagen">
+        </div>
+        <div class="service">
+                
+        
+            <h2 class="subtitulo">Contactame para Descodificarte</h2>
+                      
+            <div class="service">
+                <input class="input" type="text" placeholder="Nombre" id="nombre" name="nombre">
+
+                <input class="input" type="email" placeholder="Email" id="email" name="email"><br>
+            </div>
+            <div class="service" >
+                <textarea class="textarea" type="text" placeholder="Mensaje" id="mensaje" name="mensaje"></textarea>
+             </div>
+
+                <button class="button"  type="submit">Enviar</button>
+        
+        </div>
+            
+            
+    </main>
+
+    <footer id="footer">
+        <div class="contenedor footer-content">
+                <div class="contact-us">
+                    <h2 class="brand">Gisselle Moreno</h2>
+                    <p>acuarela35@aol.com</p>
+                </div>
+                <div class="social-media">
+                    <a href="./" class="social-media-icon">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+                    <a href="./" class="social-media-icon">
+                        <i class='bx bxl-twitter' ></i>
+                    </a>
+                    <a href="./" class="social-media-icon">
+                        <i class='bx bxl-instagram' ></i>
+                    </a>
+                </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+    <script src="js/menu.js"></script>
+    <script src="js/lightbox.js"></script>
+</body>
+</html>
